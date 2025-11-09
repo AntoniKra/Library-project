@@ -1,0 +1,37 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="bookContainer" class="book-container"></div>
+    <button id="addBookButton" class="add-book-button">Add book</button>
+    <dialog id="bookDialog">
+      <form id="inputContainer">
+        <p>Book</p>
+        <p>Title:</p>
+        <input type="text" id="titleInput" />
+        <p>Author:</p>
+        <input type="text" id="authorInput" />
+        <p>Pages:</p>
+        <input type="text" id="pagesInput" />
+        <p>Did you read this book?</p>
+        <input type="radio" name="readStatus" id="readTrue" value="true" />
+        <label for="readTrue">YES</label>
+        <input
+          type="radio"
+          name="readStatus"
+          id="readFalse"
+          value="false"
+          checked
+        />
+        <label for="readFalse">NO</label>
+        <button type="submit" id="submitButton">OK</button>
+      </form>
+    </dialog>
+    <script src="my-script.js"></script>
+  </body>
+</html>
