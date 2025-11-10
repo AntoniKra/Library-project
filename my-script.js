@@ -8,6 +8,8 @@ const authorInput = document.getElementById("authorInput");
 const pagesInput = document.getElementById("pagesInput");
 const readInput = document.getElementById("readInput");
 const inputContainer = document.getElementById("inputContainer");
+const readTrue = document.getElementById("readTrue");
+const readFalse = document.getElementById("readFalse");
 
 addButton.addEventListener("click", () => {
   dialog.showModal();
@@ -20,11 +22,11 @@ inputContainer.addEventListener("submit", (event) => {
   const author = authorInput.value;
   const pages = pagesInput.value;
 
-  const readValueAsString = document.querySelector(
-    'input[name="readStatus"]:checked'
-  ).value;
-  console.log(readValueAsString);
-  const read = readValueAsString === "true";
+  if (readTrue.checked) {
+    read = readTrue.value === "true";
+  } else if (readFalse.checked) {
+    read = readFalse.value === "true";
+  }
 
   addBookToLibrary(title, author, pages, read);
 
@@ -102,7 +104,6 @@ function displayBooks() {
     toggle.type = "checkbox";
     toggle.checked = myLibrary[i].read;
     toggle.addEventListener("click", () => {
-      console.log("siema");
       myLibrary[i].toggleReadStatus();
 
       displayBooks();
